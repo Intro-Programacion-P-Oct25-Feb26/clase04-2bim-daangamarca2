@@ -22,7 +22,8 @@ public class Ejemplo043 {
             int v2 = valores2[i];
             obtenerSuma(v1, v2);
         }
-
+        // Uso un ciclo repetitivo para recorrer el arreglo segun su tamaño con 
+        // el .length y irlos sumando respecto al valor y posicion del indice
     }
 
     public static void obtenerSuma(int a, int b) {
