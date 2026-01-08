@@ -22,6 +22,7 @@ public class Ejemplo045 {
         obtenerReporte(arreglo1);
         obtenerReporte(arreglo2);
         obtenerReporte(arreglo3);
+        obtenerReporte2(arreglo4); 
     }
 
     public static int[][] obtenerMatriz(int[][] a, int[][] b) {
@@ -34,11 +35,11 @@ public class Ejemplo045 {
         return z;
     }
 
-    public static int[][] obtenerMatriz2(int[][] a, int[][] b) {
-        int[][] z2 = new int[a.length][a[0].length];
+    public static double[][] obtenerMatriz2(int[][] a, int[][] b) {
+        double [][] z2 = new double [a.length][a[0].length];
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
-                z2[i][j] = obtenerMultiplicacion(a[i][j], b[i][j]);
+                z2[i][j] = obtenerPotencia(a[i][j], b[i][j]);
             }
         }
         return z2;
@@ -46,9 +47,20 @@ public class Ejemplo045 {
     
     public static void obtenerReporte(int[][] matriz) {
         String cadena = "";
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
                 cadena = String.format("%s%d\t", cadena, matriz[i][j]);
+            }
+            cadena = String.format("%s\n", cadena);
+        }
+        System.out.println(cadena);
+    }
+
+    public static void obtenerReporte2(double[][] matriz) {
+        String cadena = "";
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                cadena = String.format("%s%.2f\t", cadena, matriz[i][j]);
             }
             cadena = String.format("%s\n", cadena);
         }
@@ -59,9 +71,7 @@ public class Ejemplo045 {
         return a * b;
     }
 
-    public static int obtenerPotencia(int a, int b) {
-        double potencia;
-        potencia = Math.pow(a, b);
-        return (int) potencia;
+    public static double obtenerPotencia(double a, double b) {
+        return Math.pow(a, b);
     }
 }
